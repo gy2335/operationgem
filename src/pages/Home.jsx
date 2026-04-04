@@ -137,14 +137,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <h2
-              className="serif font-bold text-[#2D2226] mb-2"
+              className="serif font-bold text-[#2D2226] mb-5"
               style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
             >
               Recent Events
             </h2>
-            <p className="text-[#7A6870] text-[15px] leading-relaxed mb-14 max-w-lg">
-              We partner with senior centers to build new connections.
-            </p>
           </Reveal>
 
           <Reveal>
@@ -188,13 +185,10 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-
-      {/* ── ABOUT STRIP ────────────────────────────────────────────── */}
       <section
         className="relative py-24 px-8 md:px-16 lg:px-24 overflow-hidden"
         style={{ background: "linear-gradient(155deg, #F8F0FF 0%, #FFF0F5 50%, #EEF3FF 100%)" }}
       >
-        {/* Decorative blobs */}
         <div
           className="absolute -top-16 -right-12 w-56 h-56 pointer-events-none opacity-10"
           style={{ background: "#B578F0", borderRadius: "50% 10% 50% 10%", transform: "rotate(20deg)" }}
@@ -205,8 +199,6 @@ export default function Home() {
         />
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-
-          {/* Copy */}
           <Reveal>
             <h2
               className="serif font-bold text-[#2D2226] leading-tight mb-5"
@@ -224,8 +216,7 @@ export default function Home() {
               Our Full Story →
             </Link>
           </Reveal>
-
-          {/* Stats */}
+          
           <Reveal delay={0.15}>
             <div className="grid grid-cols-2 gap-4">
               {STATS.map((s, i) => (
