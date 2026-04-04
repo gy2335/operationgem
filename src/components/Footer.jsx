@@ -2,201 +2,110 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
-  const purple   = "#B578F0";
-  const pink     = "#E8667A";
-  const charcoal = "#2D2226";
-  const muted    = "#7A6870";
-
   const year = new Date().getFullYear();
 
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+    <footer className="bg-purple-950 px-8 md:px-12 pt-24 pb-12 border-t border-white/5 w-full">
+      <div className="max-w-7xl mx-auto">
 
-        .gem-footer {
-          background: #2D2226;
-          padding: 64px 6vw 28px;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .gem-footer-inner {
-          max-width: 1180px;
-          margin: 0 auto;
-        }
-        .gem-footer-top {
-          display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr;
-          gap: 52px;
-          margin-bottom: 52px;
-        }
-        @media (max-width: 900px) {
-          .gem-footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
-        }
-        @media (max-width: 540px) {
-          .gem-footer-top { grid-template-columns: 1fr; }
-        }
+        {/* Main Grid: 4 Equal Columns on Desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
 
-        /* Logo col */
-        .gem-footer-brand {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 16px;
-          text-decoration: none;
-        }
-        .gem-footer-logo-circle {
-          width: 38px; height: 38px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #B578F0, #E8667A);
-          display: flex; align-items: center; justify-content: center;
-          font-size: 18px; flex-shrink: 0;
-        }
-        .gem-footer-org-name {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 20px; font-weight: 600;
-          color: #fff; line-height: 1;
-        }
-        .gem-footer-tagline {
-          font-size: 13.5px;
-          line-height: 1.8;
-          color: rgba(255,255,255,0.45);
-          max-width: 260px;
-          margin-bottom: 22px;
-        }
-        .gem-footer-social {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(255,255,255,0.07);
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 100px;
-          padding: 8px 16px;
-          font-size: 13px;
-          color: rgba(255,255,255,0.65);
-          text-decoration: none;
-          transition: background 0.2s, color 0.2s;
-        }
-        .gem-footer-social:hover {
-          background: rgba(181,120,240,0.18);
-          color: #DDB0FF;
-        }
+          {/* Column 1: Brand */}
+          <div className="flex flex-col">
+            <Link to="/" className="flex items-center gap-3 no-underline mb-6">
+              <img src="/rocky.png" alt="Logo" className="h-16 md:h-20 object-contain" />
+              <span
+                className="text-white font-bold text-2xl tracking-tight"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                G.E.M.
+              </span>
+            </Link>
+            <p className="text-white/50 text-sm leading-relaxed leading-6">
+              Generational Empowerment Movement. A student-run, fiscally sponsored nonprofit
+              dedicated to reducing senior solitude through volunteering.
+            </p>
+          </div>
 
-        /* Link columns */
-        .gem-footer-col-title {
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: #B578F0;
-          margin-bottom: 18px;
-        }
-        .gem-footer-links {
-          display: flex;
-          flex-direction: column;
-          gap: 11px;
-        }
-        .gem-footer-link {
-          font-size: 14px;
-          color: rgba(255,255,255,0.45);
-          text-decoration: none;
-          transition: color 0.2s;
-          line-height: 1;
-        }
-        .gem-footer-link:hover { color: #fff; }
+          {/* Column 2: Organization */}
+          <div className="flex flex-col">
+            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
+              Organization
+            </p>
+            <nav className="flex flex-col gap-4">
+              {['About', 'Events', 'Volunteer', 'Chapters', 'Donate'].map((item) => (
+                <Link
+                  key={item}
+                  to={`/${item.toLowerCase()}`}
+                  className="text-white/60 text-[15px] no-underline hover:text-white transition-colors duration-200"
+                >
+                  {item}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-        /* Bottom bar */
-        .gem-footer-bottom {
-          border-top: 1px solid rgba(255,255,255,0.08);
-          padding-top: 24px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-        .gem-footer-copy {
-          font-size: 12.5px;
-          color: rgba(255,255,255,0.3);
-        }
-        .gem-footer-made {
-          font-size: 12.5px;
-          color: rgba(255,255,255,0.3);
-        }
-        .gem-footer-made span {
-          color: #E8667A;
-        }
-      `}</style>
+          {/* Column 3: Contact (Email Aligned) */}
+          <div className="flex flex-col">
+            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
+              Contact Us
+            </p>
+            <div className="flex flex-col gap-1">
+              <span className="text-white/40 text-xs uppercase tracking-widest">Email</span>
+              <a
+                href="mailto:gemprojectnyc@gmail.com"
+                className="text-white text-base md:text-lg hover:text-purple-300 transition-colors break-all no-underline"
+              >
+                gemprojectnyc@gmail.com
+              </a>
+            </div>
+          </div>
 
-      <footer className="gem-footer">
-        <div className="gem-footer-inner">
-          <div className="gem-footer-top">
-
-            {/* Brand column */}
-            <div>
-              <Link to="/home" className="gem-footer-brand">
-                <div className="gem-footer-logo-circle">🌸</div>
-                <div className="gem-footer-org-name">G.E.M.</div>
-              </Link>
-              <p className="gem-footer-tagline">
-                Generational Empowerment Movement. A student-run, fiscally sponsored nonprofit dedicated to reducing senior solitude through volunteering.
-              </p>
+          {/* Column 4: Socials */}
+          <div className="flex flex-col">
+            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
+              Instagram
+            </p>
+            <div className="flex flex-col gap-3">
               <a
                 href="https://www.instagram.com/operationgem/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gem-footer-social"
+                className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 text-sm text-white/80 no-underline transition-all hover:bg-purple-400/20 hover:text-white hover:-translate-y-1"
               >
-                📸 @operationgem
+                <span>Instagram</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 text-sm text-white/80 no-underline transition-all hover:bg-purple-400/20 hover:text-white hover:-translate-y-1"
+              >
+                <span>TikTok</span>
               </a>
             </div>
-
-            {/* Organization */}
-            <div>
-              <div className="gem-footer-col-title">Organization</div>
-              <div className="gem-footer-links">
-                <Link to="/about"     className="gem-footer-link">About Us</Link>
-                <Link to="/about"     className="gem-footer-link">Our Mission</Link>
-                <Link to="/about"     className="gem-footer-link">Our Team</Link>
-                <Link to="/events"    className="gem-footer-link">Press & Media</Link>
-              </div>
-            </div>
-
-            {/* Programs */}
-            <div>
-              <div className="gem-footer-col-title">Programs</div>
-              <div className="gem-footer-links">
-                <Link to="/events" className="gem-footer-link">Arts &amp; Crafts</Link>
-                <Link to="/events" className="gem-footer-link">Tech Companions</Link>
-                <Link to="/events" className="gem-footer-link">Garden &amp; Wellness</Link>
-                <Link to="/events" className="gem-footer-link">Story &amp; Memory</Link>
-                <Link to="/events" className="gem-footer-link">Music &amp; Movement</Link>
-              </div>
-            </div>
-
-            {/* Get Involved */}
-            <div>
-              <div className="gem-footer-col-title">Get Involved</div>
-              <div className="gem-footer-links">
-                <Link to="/volunteer" className="gem-footer-link">Volunteer</Link>
-                <Link to="/chapters"  className="gem-footer-link">Chapters</Link>
-                <Link to="/donate"    className="gem-footer-link">Donate</Link>
-                <Link to="/volunteer" className="gem-footer-link">Contact Us</Link>
-              </div>
-            </div>
-
           </div>
 
-          {/* Bottom bar */}
-          <div className="gem-footer-bottom">
-            <p className="gem-footer-copy">
-              © {year} G.E.M. — Generational Empowerment Movement. Fiscally sponsored nonprofit. NYC · Est. 2023
-            </p>
-            <p className="gem-footer-made">
-              Made with <span>♥</span> by students, for seniors.
-            </p>
-          </div>
         </div>
-      </footer>
-    </>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p className="text-white/30 text-xs md:text-sm">
+              © {year} Generational Empowerment Movement.
+            </p>
+            <p className="text-white/20 text-[10px] uppercase tracking-widest">
+              Fiscally sponsored nonprofit
+            </p>
+          </div>
+
+          <p className="text-white/40 text-sm italic">
+            Made with <span className="text-pink-500 not-italic">♥</span> by students for seniors
+          </p>
+        </div>
+
+      </div>
+    </footer>
   );
 }
