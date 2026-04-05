@@ -5,103 +5,99 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-purple-950 px-8 md:px-12 pt-24 pb-12 border-t border-white/5 w-full">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-purple-950 w-full">
+      <div className="max-w-6xl mx-auto px-8 md:px-12 pt-20 pb-10">
 
-        {/* Main Grid: 4 Equal Columns on Desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        {/* ── Three even columns ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-16">
 
-          {/* Column 1: Brand */}
+          {/* Column 1 — Brand */}
           <div className="flex flex-col">
-            <Link to="/" className="flex items-center gap-3 no-underline mb-6">
-              <img src="/rocky.png" alt="Logo" className="h-16 md:h-20 object-contain" />
+            <Link to="/" className="flex items-center gap-3 no-underline mb-5">
+              <img src="/rocky.png" alt="GEM Logo" className="h-14 object-contain" />
               <span
-                className="text-white font-bold text-2xl tracking-tight"
+                className="text-white text-2xl font-bold leading-none"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 G.E.M.
               </span>
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed leading-6">
-              Generational Empowerment Movement. A student-run, fiscally sponsored nonprofit
-              dedicated to reducing senior solitude through volunteering.
+            <p className="text-white/45 text-[15px] leading-[1.8] mb-7">
+              Generational Empowerment Movement: A student-run nonprofit bridging the gap between generations through volunteering, community, and care.
             </p>
-          </div>
-
-          {/* Column 2: Organization */}
-          <div className="flex flex-col">
-            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
-              Organization
-            </p>
-            <nav className="flex flex-col gap-4">
-              {['About', 'Events', 'Volunteer', 'Chapters', 'Donate'].map((item) => (
-                <Link
-                  key={item}
-                  to={`/${item.toLowerCase()}`}
-                  className="text-white/60 text-[15px] no-underline hover:text-white transition-colors duration-200"
-                >
-                  {item}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Column 3: Contact (Email Aligned) */}
-          <div className="flex flex-col">
-            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
-              Contact Us
-            </p>
-            <div className="flex flex-col gap-1">
-              <span className="text-white/40 text-xs uppercase tracking-widest">Email</span>
-              <a
-                href="mailto:gemprojectnyc@gmail.com"
-                className="text-white text-base md:text-lg hover:text-purple-300 transition-colors break-all no-underline"
-              >
-                gemprojectnyc@gmail.com
-              </a>
-            </div>
-          </div>
-
-          {/* Column 4: Socials */}
-          <div className="flex flex-col">
-            <p className="text-purple-300 text-sm font-bold tracking-[0.2em] uppercase mb-8">
-              Instagram
-            </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex gap-3">
               <a
                 href="https://www.instagram.com/operationgem/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 text-sm text-white/80 no-underline transition-all hover:bg-purple-400/20 hover:text-white hover:-translate-y-1"
+                className="flex items-center gap-2 border border-white/15 rounded-full px-5 py-2.5 text-sm text-white/60 no-underline transition-all duration-200 hover:border-purple-400/50 hover:text-purple-200 hover:bg-purple-400/10"
               >
-                <span>Instagram</span>
+                📸 Instagram
               </a>
               <a
-                href="https://www.tiktok.com/"
+                href="https://www.tiktok.com/@operationgem"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 text-sm text-white/80 no-underline transition-all hover:bg-purple-400/20 hover:text-white hover:-translate-y-1"
+                className="flex items-center gap-2 border border-white/15 rounded-full px-5 py-2.5 text-sm text-white/60 no-underline transition-all duration-200 hover:border-purple-400/50 hover:text-purple-200 hover:bg-purple-400/10"
               >
-                <span>TikTok</span>
+                🎵 TikTok
               </a>
+            </div>
+          </div>
+
+          {/* Explore */}
+          <div className="flex flex-col sm:items-center">
+            <div>
+              <p className="text-purple-300 text-xs font-bold tracking-[0.16em] uppercase mb-6">
+                Explore
+              </p>
+              <div className="flex flex-col gap-4">
+                <Link to="/about"     className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">About</Link>
+                <Link to="/events"    className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Events</Link>
+                <Link to="/volunteer" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Volunteer</Link>
+                <Link to="/partner" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Partner</Link>
+                <Link to="/chapters"  className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Chapters</Link>
+                <Link to="/donate"    className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Donate</Link>
+              </div>
+            </div>
+          </div>
+
+          {/*Contact */}
+          <div className="flex flex-col sm:items-center">
+            <div>
+              <p className="text-purple-300 text-xs font-bold tracking-[0.16em] uppercase mb-6">
+                Contact
+              </p>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                  <span className="text-white/30 text-xs uppercase tracking-widest">Email</span>
+                  <a
+                    href="mailto:gemprojectnyc@gmail.com"
+                    className="text-white/60 text-[15px] no-underline hover:text-white transition-colors duration-200"
+                  >
+                    gemprojectnyc@gmail.com
+                  </a>
+                </div>
+                <div className="flex flex-col gap-1 mt-2">
+                  <span className="text-white/30 text-xs uppercase tracking-widest">Location</span>
+                  <span className="text-white/60 text-[15px]">New York City, NY</span>
+                </div>
+                <div className="flex flex-col gap-1 mt-2">
+                  <span className="text-white/30 text-xs uppercase tracking-widest">Established</span>
+                  <span className="text-white/60 text-[15px]">2023</span>
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <p className="text-white/30 text-xs md:text-sm">
-              © {year} Generational Empowerment Movement.
-            </p>
-            <p className="text-white/20 text-[10px] uppercase tracking-widest">
-              Fiscally sponsored nonprofit
-            </p>
-          </div>
-
-          <p className="text-white/40 text-sm italic">
-            Made with <span className="text-pink-500 not-italic">♥</span> by students for seniors
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-white/25 text-sm">
+            © {year} G.E.M. Fiscally sponsored nonprofit.
+          </p>
+          <p className="text-white/25 text-sm">
+            Made with <span className="text-pink-400">♥</span> by students for seniors.
           </p>
         </div>
 
