@@ -8,10 +8,9 @@ export default function Footer() {
     <footer className="bg-purple-950 w-full">
       <div className="max-w-6xl mx-auto px-8 md:px-12 pt-20 pb-10">
 
-        {/* ── Three even columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-16">
 
-          {/* Column 1 — Brand */}
+          {/* brand */}
           <div className="flex flex-col">
             <Link to="/" className="flex items-center gap-3 no-underline mb-5">
               <img src="/rocky.png" alt="GEM Logo" className="h-14 object-contain" />
@@ -23,7 +22,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/45 text-[15px] leading-[1.8] mb-7">
-              Generational Empowerment Movement: A student-run nonprofit bridging the gap between generations through volunteering, community, and care.
+              A student-run nonprofit bridging the gap between generations through volunteering, community, and care.
             </p>
             <div className="flex gap-3">
               <a
@@ -45,24 +44,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Explore */}
+          {/* explore */}
           <div className="flex flex-col sm:items-center">
             <div>
               <p className="text-purple-300 text-xs font-bold tracking-[0.16em] uppercase mb-6">
                 Explore
               </p>
               <div className="flex flex-col gap-4">
-                <Link to="/about"     className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">About</Link>
-                <Link to="/events"    className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Events</Link>
+                <Link to="/about" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">About</Link>
+                <Link to="/events" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Events</Link>
                 <Link to="/volunteer" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Volunteer</Link>
                 <Link to="/partner" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Partner</Link>
-                <Link to="/chapters"  className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Chapters</Link>
-                <Link to="/donate"    className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Donate</Link>
+                <Link to="/chapters" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Chapters</Link>
+                <Link to="/donate" className="text-white/50 text-[15px] no-underline hover:text-white transition-colors duration-200">Donate</Link>
               </div>
             </div>
           </div>
 
-          {/*Contact */}
+          {/*contact */}
           <div className="flex flex-col sm:items-center">
             <div>
               <p className="text-purple-300 text-xs font-bold tracking-[0.16em] uppercase mb-6">
@@ -81,10 +80,6 @@ export default function Footer() {
                 <div className="flex flex-col gap-1 mt-2">
                   <span className="text-white/30 text-xs uppercase tracking-widest">Location</span>
                   <span className="text-white/60 text-[15px]">New York City, NY</span>
-                </div>
-                <div className="flex flex-col gap-1 mt-2">
-                  <span className="text-white/30 text-xs uppercase tracking-widest">Established</span>
-                  <span className="text-white/60 text-[15px]">2023</span>
                 </div>
               </div>
             </div>

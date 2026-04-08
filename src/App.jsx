@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Volunteer from "./pages/Volunteer";
+import Chapters from "./pages/Chapters";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/chapters" element={<Chapters />} />
           </Routes>
         </main>
         <Footer />

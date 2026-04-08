@@ -10,8 +10,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close mobile menu on resize if screen becomes large
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileMenuOpen(false);
@@ -21,9 +19,9 @@ export default function Navbar() {
   }, []);
 
   const purple = "#B578F0";
-  const charcoal = "#2D2226";
+  const charcoal = "#000000";
   const cream = "#FFFAF8";
-  const mutedText = "#7A6870"; // Define the missing 'muted' variable here
+  const mutedText = "#7A6870";
 
   const linkStyle = "font-sans text-base font-semibold tracking-wider transition-colors hover:opacity-70 no-underline";
 
