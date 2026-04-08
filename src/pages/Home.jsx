@@ -223,7 +223,7 @@ export default function Home() {
               {STATS.map((s, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-pink-100 rounded-2xl p-7 text-center transition-transform duration-200 hover:-translate-y-1"
+                  className="bg-white border border-pink-100 p-7 text-center transition-transform duration-200 hover:-translate-y-1"
                 >
                   <div
                     className={`serif font-bold leading-none mb-2 ${s.color}`}

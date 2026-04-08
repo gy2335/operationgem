@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Volunteer from "./pages/Volunteer";
 import Chapters from "./pages/Chapters";
+import Donate from "./pages/Donate";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/chapters" element={<Chapters />} />
+            <Route path="/donate" element={<Donate />} />
           </Routes>
         </main>
         <Footer />
