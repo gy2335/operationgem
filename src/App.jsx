@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Volunteer from "./pages/Volunteer";
 import Chapters from "./pages/Chapters";
 import Donate from "./pages/Donate";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/chapters" element={<Chapters />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <Footer />

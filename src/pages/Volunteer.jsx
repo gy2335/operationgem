@@ -66,11 +66,11 @@ export default function Volunteer() {
               style={{ fontSize: "clamp(42px, 6vw, 72px)", letterSpacing: "-0.01em" }}
             >
               Volunteer with{" "}
-              <span style={{ color: "#DDB0FF", fontStyle: "italic" }}>G.E.M.</span>
+              <span style={{ color: "#DDB0FF" }}>G.E.M.</span>
             </h1>
             <p
               className="serif text-white/65 max-w-xl"
-              style={{ fontSize: "clamp(17px, 2vw, 22px)", fontStyle: "italic" }}
+              style={{ fontSize: "clamp(17px, 2vw, 22px)" }}
             >
               Show up, connect, and make someone's week a little brighter.
             </p>
