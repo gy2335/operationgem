@@ -62,7 +62,8 @@ const EVENTS = [
 const STATS = [
   { num: "100+", label: "Volunteers", color: "text-purple-500"},
   { num: "40+", label: "Events", color: "text-pink-500"},
-  { num: "X", label: "Partner Senior Centers", color: "text-pink-500"}
+  { num: "X", label: "Partner Senior Centers", color: "text-pink-500"},
+  { num: "X", label: "Chapters", color: "text-pink-500"}
 ];
 
 export default function Home() {
@@ -216,7 +217,7 @@ export default function Home() {
               Our Full Story →
             </Link>
           </Reveal>
-          
+
           <Reveal delay={0.15}>
             <div className="grid grid-cols-2 gap-4">
               {STATS.map((s, i) => (
