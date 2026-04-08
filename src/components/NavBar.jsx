@@ -11,22 +11,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on resize if screen becomes large
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMobileMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const purple = "#B578F0";
   const charcoal = "#2D2226";
   const cream = "#FFFAF8";
+  const mutedText = "#7A6870"; // Define the missing 'muted' variable here
 
   const linkStyle = "font-sans text-base font-semibold tracking-wider transition-colors hover:opacity-70 no-underline";
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-sm" : "bg-transparent"
+        scrolled || mobileMenuOpen ? "bg-white shadow-sm" : "bg-transparent"
       }`}
-      style={{ borderBottom: scrolled ? "1px solid #F0E4E8" : "none" }}
+      style={{ borderBottom: (scrolled || mobileMenuOpen) ? "1px solid #F0E4E8" : "none" }}
     >
-
       <div className="w-full px-8 md:px-12 h-20 flex justify-between items-center">
-
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Link to="/home" className="flex items-center gap-3 no-underline">
@@ -42,14 +50,9 @@ export default function Navbar() {
 
         {/* Desktop Pages */}
         <div className="hidden md:flex items-center space-x-10">
-          <Link to="/about" className={linkStyle} style={{ color: charcoal }}>
-            About
-          </Link>
-          <Link to="/events" className={linkStyle} style={{ color: charcoal }}>
-            Events
-          </Link>
+          <Link to="/about" className={linkStyle} style={{ color: charcoal }}>About</Link>
+          <Link to="/events" className={linkStyle} style={{ color: charcoal }}>Events</Link>
 
-          {/* GET INVOLVED DROPDOWN */}
           <div className="relative group h-20 flex items-center">
             <button
               className={`${linkStyle} flex items-center gap-1 cursor-default outline-none border-none bg-transparent`}
@@ -58,18 +61,10 @@ export default function Navbar() {
               Get Involved
               <span className="text-[10px] transition-transform group-hover:rotate-180">▼</span>
             </button>
-
-            {/* Dropdown Menu */}
             <div className="absolute top-20 left-0 w-48 bg-white border border-[#F0E4E8] rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <Link to="/volunteer" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>
-                Volunteer
-              </Link>
-              <Link to="/partner" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>
-                Partner
-              </Link>
-              <Link to="/chapters" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>
-                Chapters
-              </Link>
+              <Link to="/volunteer" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>Volunteer</Link>
+              <Link to="/partner" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>Partner</Link>
+              <Link to="/chapters" className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold" style={{ color: charcoal }}>Chapters</Link>
             </div>
           </div>
 
@@ -84,7 +79,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 outline-none border-none bg-transparent"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{ color: charcoal }}
         >
@@ -95,8 +90,8 @@ export default function Navbar() {
       {/* Mobile Menu View */}
       {mobileMenuOpen && (
         <div
-          className="absolute top-full left-0 w-full md:hidden flex flex-col p-8 space-y-6 border-t border-[#F0E4E8]"
-          style={{ backgroundColor: cream }}
+          className="absolute top-full left-0 w-full md:hidden flex flex-col p-8 space-y-6 border-t border-[#F0E4E8] shadow-xl"
+          style={{ backgroundColor: "white" }} // Force white background for readability
         >
           <Link to="/about" className="text-2xl font-serif font-medium no-underline" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
             About
@@ -106,7 +101,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex flex-col space-y-4 pt-2 border-t border-[#F0E4E8]">
-             <span className="text-xs uppercase tracking-widest font-bold" style={{ color: muted }}>Get Involved</span>
+             <span className="text-xs uppercase tracking-widest font-bold" style={{ color: mutedText }}>Get Involved</span>
              <Link to="/volunteer" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
                Volunteer
              </Link>
