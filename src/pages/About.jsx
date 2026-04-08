@@ -123,22 +123,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* ── MISSION CALLOUT ── */}
-      <section className="py-24 px-8 md:px-12 lg:px-20 bg-white border-t border-purple-50">
-        <div className="max-w-5xl mx-auto text-center">
-          <Reveal>
-            <p className="serif italic text-[#2D2226] leading-snug" style={{ fontSize: "clamp(24px, 3.5vw, 38px)" }}>
-              "Our goal is to ensure that youth worldwide have an understanding and appreciation for the older adult community, and vice versa."
-            </p>
-            <div className="mt-10 flex justify-center gap-4">
-              <div className="h-[1px] w-12 bg-purple-200 self-center"></div>
-              <span className="text-xs uppercase tracking-widest font-bold text-purple-400">The G.E.M. Mission</span>
-              <div className="h-[1px] w-12 bg-purple-200 self-center"></div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 }
