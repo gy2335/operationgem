@@ -35,6 +35,14 @@ function Reveal({ children, delay = 0, className = "" }) {
 const EVENTS = [
   {
     id: 1,
+    title: "Easter Egg Decorating",
+    date: "April 10, 2026",
+    description:
+      "Students and seniors made easter eggs together at Brooklyn Homecrest Community Bensonhurst Center.",
+    image: "easter.png"
+  },
+  {
+    id: 2,
     title: "Origami Making",
     date: "March 20, 2026",
     description:
@@ -42,21 +50,13 @@ const EVENTS = [
     image: "origami.png"
   },
   {
-    id: 2,
+    id: 3,
     title: "Bingo",
     date: "February 20, 2026",
     description:
       "Volunteers played bingo with seniors at SNAP Senior Center.",
     image: "bingo.png"
-  },
-  {
-    id: 3,
-    title: "DIY Tote Bags",
-    date: "January 20, 2026",
-    description:
-      "Students and seniors made painted tote bags together at Bensonhurst Center.",
-    image: "totebag.png"
-  },
+  }
 ];
 
 const STATS = [

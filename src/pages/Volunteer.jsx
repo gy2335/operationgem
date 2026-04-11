@@ -109,9 +109,9 @@ export default function Volunteer() {
             <div className="flex flex-col gap-4">
               {[
                 { label: "Time commitment", value: "As little as once a month" },
-                { label: "Who can join",    value: "Any student" },
-                { label: "What to expect", value: "Arts and Crafts, Games, and more" },
-                { label: "Questions?",     value: "gemprojectnyc@gmail.com" },
+                { label: "Who can join", value: "Any student" },
+                { label: "What to expect", value: "Arts & Crafts, Games, Fundraisers, and more!" },
+                { label: "Questions?", value: "gemprojectnyc@gmail.com" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col gap-0.5 border-b border-pink-100 pb-4">
                   <span className="text-[#9A8890] text-xs uppercase tracking-widest">{item.label}</span>
