@@ -52,7 +52,7 @@ export default function Donate() {
           </a>
         </div>
 
-        {/* Small footer text */}
+        {/* footer text */}
         <div className="absolute bottom-[-10vh] left-0 w-full text-white/50 text-xs tracking-widest uppercase">
           G.E.M. is a fiscally sponsored nonprofit.
         </div>

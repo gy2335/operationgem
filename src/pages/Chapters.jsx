@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-// Standard Reveal Hook
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -94,7 +93,7 @@ export default function Chapters() {
             </div>
           </Reveal>
 
-          {/* Right Column: Form */}
+          {/* form */}
           <Reveal delay={0.2}>
             <div className="bg-white rounded-3xl border border-purple-100 overflow-hidden shadow-2xl shadow-purple-900/5">
               <iframe

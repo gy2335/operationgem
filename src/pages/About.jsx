@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-// Reuse the standard Reveal logic for consistency
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -101,7 +100,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── THREE PILLARS ── */}
+      {/* pillars */}
       <section className="py-24 px-8 md:px-12 lg:px-20 bg-[#FFFAF8]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

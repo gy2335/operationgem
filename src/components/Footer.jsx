@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/45 text-[15px] leading-[1.8] mb-7">
-              A student-run nonprofit bridging the gap between generations through volunteering, community, and care.
+              A student-run 501(c)(3) nonprofit bridging the gap between generations through volunteering, community, and care.
             </p>
             <div className="flex gap-3">
               <a
