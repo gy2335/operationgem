@@ -9,6 +9,7 @@ import Donate from "./pages/Donate";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Partner from "./pages/Partner";
+import Insights from "./pages/Insights";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
             <Route path="/partner" element={<Partner />} />
+            <Route path="/insights" element={<Insights />} />
           </Routes>
         </main>
         <Footer />

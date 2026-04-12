@@ -46,11 +46,39 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Pages */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-10">
           <Link to="/about" className={linkStyle} style={{ color: charcoal }}>About</Link>
-          <Link to="/events" className={linkStyle} style={{ color: charcoal }}>Events</Link>
 
+          {/* Events dropdown */}
+          <div className="relative group h-20 flex items-center">
+            <button
+              className={`${linkStyle} flex items-center gap-1 cursor-default outline-none border-none bg-transparent`}
+              style={{ color: charcoal }}
+            >
+              Events
+              <span className="text-[10px] transition-transform group-hover:rotate-180">▼</span>
+            </button>
+            <div className="absolute top-20 left-0 w-52 bg-white border border-[#F0E4E8] rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <Link
+                to="/events"
+                className="block px-6 py-4 hover:bg-[#FFFAF8] transition-colors no-underline font-sans text-base font-semibold"
+                style={{ color: charcoal }}
+              >
+                Past & Upcoming Events
+              </Link>
+              <Link
+                to="/insights"
+                className="block px-6 py-3 hover:bg-[#FFFAF8] transition-colors no-underline"
+              >
+                <span className="font-sans text-base font-semibold block" style={{ color: charcoal }}>
+                  G.E.M. of Insights
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Get Involved dropdown */}
           <div className="relative group h-20 flex items-center">
             <button
               className={`${linkStyle} flex items-center gap-1 cursor-default outline-none border-none bg-transparent`}
@@ -85,30 +113,39 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu View */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           className="absolute top-full left-0 w-full md:hidden flex flex-col p-8 space-y-6 border-t border-[#F0E4E8] shadow-xl"
-          style={{ backgroundColor: "white" }} // Force white background for readability
+          style={{ backgroundColor: "white" }}
         >
           <Link to="/about" className="text-2xl font-serif font-medium no-underline" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
             About
           </Link>
-          <Link to="/events" className="text-2xl font-serif font-medium no-underline" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
-            Events
-          </Link>
 
+          {/* Events section */}
           <div className="flex flex-col space-y-4 pt-2 border-t border-[#F0E4E8]">
-             <span className="text-xs uppercase tracking-widest font-bold" style={{ color: mutedText }}>Get Involved</span>
-             <Link to="/volunteer" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
-               Volunteer
-             </Link>
-             <Link to="/partner" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
-               Partner
-             </Link>
-             <Link to="/chapters" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
-               Chapters
-             </Link>
+            <span className="text-xs uppercase tracking-widest font-bold" style={{ color: mutedText }}>Events</span>
+            <Link to="/events" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
+              All Events
+            </Link>
+            <Link to="/insights" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
+              G.E.M. of Insights
+            </Link>
+          </div>
+
+          {/* Get Involved section */}
+          <div className="flex flex-col space-y-4 pt-2 border-t border-[#F0E4E8]">
+            <span className="text-xs uppercase tracking-widest font-bold" style={{ color: mutedText }}>Get Involved</span>
+            <Link to="/volunteer" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
+              Volunteer
+            </Link>
+            <Link to="/partner" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
+              Partner
+            </Link>
+            <Link to="/chapters" className="text-xl font-serif font-medium no-underline pl-4" style={{ color: charcoal }} onClick={() => setMobileMenuOpen(false)}>
+              Chapters
+            </Link>
           </div>
 
           <Link
