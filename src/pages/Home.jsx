@@ -61,9 +61,7 @@ const EVENTS = [
 
 const STATS = [
   { num: "100+", label: "Volunteers", color: "text-purple-500"},
-  { num: "40+", label: "Events", color: "text-pink-500"},
-  { num: "X", label: "Partner Senior Centers", color: "text-pink-500"},
-  { num: "X", label: "Chapters", color: "text-pink-500"}
+  { num: "40+", label: "Events", color: "text-pink-500"}
 ];
 
 export default function Home() {
