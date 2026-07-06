@@ -35,6 +35,14 @@ function Reveal({ children, delay = 0, className = "" }) {
 const EVENTS = [
   {
     id: 1,
+    title: "Summer Cookie Decorating",
+    date: "June 24, 2026",
+    description:
+      "Students and seniors made fun designs together at Brooklyn Homecrest Community Bensonhurst Center.",
+    image: "cookie.png"
+  },
+  {
+    id: 2,
     title: "Easter Egg Decorating",
     date: "April 10, 2026",
     description:
@@ -42,20 +50,12 @@ const EVENTS = [
     image: "easter.png"
   },
   {
-    id: 2,
+    id: 3,
     title: "Origami Making",
     date: "March 20, 2026",
     description:
       "Students and seniors spent an afternoon making orgami crafts in Kew Gardens Older Adult Center.",
     image: "origami.png"
-  },
-  {
-    id: 3,
-    title: "Bingo",
-    date: "February 20, 2026",
-    description:
-      "Volunteers played bingo with seniors at SNAP Senior Center.",
-    image: "bingo.png"
   }
 ];
 
@@ -145,8 +145,8 @@ export default function Home() {
 
           <Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {EVENTS.map((event, i) => (
-                <div className="bg-white border border-pink-100/80 overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-purple-100/50">
+            {EVENTS.map((event) => (
+                <div key={event.id} className="bg-white border border-pink-100/80 overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-purple-100/50">
                   <img
                     src={event.image}
                     alt={event.title}

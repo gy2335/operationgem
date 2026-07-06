@@ -33,6 +33,27 @@ function Reveal({ children, delay = 0, className = "" }) {
 
 const PAST_EVENTS = [
   {
+    id: 7,
+    title: "Bingo",
+    date: "June 30, 2026",
+    location: "Forest Hills Community Center",
+    image: "bingo1.png",
+  },
+  {
+    id: 6,
+    title: "Summer Cookie Decorating",
+    date: "June 25, 2026",
+    location: "Forest Hills Community Center",
+    image: "cookie2.png",
+  },
+  {
+    id: 5,
+    title: "Summer Cookie Decorating",
+    date: "June 24, 2026",
+    location: "Brooklyn Homecrest Community Bensonhurst Center",
+    image: "cookie.png",
+  },
+  {
     id: 1,
     title: "Easter Egg Decorating",
     date: "April 10, 2026",
@@ -50,7 +71,7 @@ const PAST_EVENTS = [
     id: 3,
     title: "Origami Making",
     date: "February 19, 2026",
-    location: "Brooklyn Homecrest Community Services Bensonhurst Center",
+    location: "Brooklyn Homecrest Community Bensonhurst Center",
     image: "bingo.png",
   },
   {
@@ -63,17 +84,42 @@ const PAST_EVENTS = [
 ];
 
 const UPCOMING_EVENTS = [
+  {
+    id: 1,
+    title: "Board Games",
+    month: "JUL",
+    day: "10",
+    location: "Forest Hills Community Center",
+    detail: "Uno, Poker, Scrabble, Monopoly & Headbands",
+    color: "#B578F0",
+  },
+  {
+    id: 2,
+    title: "Origami Making",
+    month: "JUL",
+    day: "17",
+    location: "Forest Hills Community Center",
+    color: "#E8667A",
+  },
+  {
+    id: 3,
+    title: "Tissue Paper Art",
+    month: "JUL",
+    day: "24",
+    location: "Forest Hills Community Center",
+    color: "#EC6FAF",
+  },
+  {
+    id: 4,
+    title: "Tote Bag Making",
+    month: "JUL",
+    day: "31",
+    location: "Forest Hills Community Center",
+    color: "#7C6FE0",
+  },
 ];
 
 export default function Events() {
-  const stripRef = useRef(null);
-
-  const scroll = (dir) => {
-    if (stripRef.current) {
-      stripRef.current.scrollBy({ left: dir * 320, behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="overflow-x-hidden">
       <style>{`
@@ -85,29 +131,14 @@ export default function Events() {
         }
         .anim-fade { animation: fadeUp 0.75s ease 0.15s both; }
 
-        .photo-strip::-webkit-scrollbar { height: 0px; }
-        .photo-strip { scrollbar-width: none; }
-
-        .scroll-btn {
-          width: 40px; height: 40px;
-          border-radius: 50%;
-          background: white;
-          border: 1.5px solid #e9d5f5;
-          color: #B578F0;
-          font-size: 18px;
-          cursor: pointer;
-          display: flex; align-items: center; justify-content: center;
-          transition: all 0.2s;
-          flex-shrink: 0;
-        }
-        .scroll-btn:hover {
-          background: #f3e8ff;
-          border-color: #B578F0;
+        .event-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          gap: 28px;
         }
 
         .event-photo {
-          width: 280px;
-          flex-shrink: 0;
+          width: 100%;
           display: flex;
           flex-direction: column;
           gap: 10px;
@@ -230,9 +261,12 @@ export default function Events() {
                         {ev.title}
                       </h3>
                       <div className="flex flex-wrap gap-4 text-xs text-[#9A8890]">
-                        <span>🕐 {ev.time}</span>
+                        {ev.time && <span>🕐 {ev.time}</span>}
                         <span>📍 {ev.location}</span>
                       </div>
+                      {ev.detail && (
+                        <p className="text-xs text-[#B59AAA] mt-1.5">{ev.detail}</p>
+                      )}
                     </div>
                     <div className="flex items-center pr-6 text-[#D8C4E8]">
                       <span style={{ fontSize: "20px" }}>›</span>
@@ -272,44 +306,34 @@ export default function Events() {
             </p>
           </Reveal>
 
-          <Reveal>
-            <div className="flex items-center gap-4">
-              <button className="scroll-btn" onClick={() => scroll(-1)} aria-label="Scroll left">‹</button>
-
-              <div
-                ref={stripRef}
-                className="photo-strip flex gap-5 overflow-x-auto flex-1"
-                style={{ scrollSnapType: "x mandatory" }}
-              >
-                {PAST_EVENTS.map((ev) => (
-                  <div key={ev.id} className="event-photo" style={{ scrollSnapAlign: "start" }}>
-                    <div className="relative">
-                      <img
-                        src={ev.image}
-                        alt={ev.title}
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "flex";
-                        }}
-                      />
-                      <div className="photo-placeholder" style={{ display: "none" }}>
-                        ✦
-                      </div>
-                    </div>
-                    <div>
-                      <p className="serif font-semibold text-[#2D2226]" style={{ fontSize: "17px", lineHeight: 1.3 }}>
-                        {ev.title}
-                      </p>
-                      <p className="text-[#9A8890] text-xs mt-0.5">{ev.date}</p>
-                      <p className="text-[#B59AAA] text-xs mt-0.5">{ev.location}</p>
+          <div className="event-grid">
+            {PAST_EVENTS.map((ev, i) => (
+              <Reveal key={ev.id} delay={(i % 4) * 0.08}>
+                <div className="event-photo">
+                  <div className="relative">
+                    <img
+                      src={ev.image}
+                      alt={ev.title}
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "flex";
+                      }}
+                    />
+                    <div className="photo-placeholder" style={{ display: "none" }}>
+                      ✦
                     </div>
                   </div>
-                ))}
-              </div>
-
-              <button className="scroll-btn" onClick={() => scroll(1)} aria-label="Scroll right">›</button>
-            </div>
-          </Reveal>
+                  <div>
+                    <p className="serif font-semibold text-[#2D2226]" style={{ fontSize: "17px", lineHeight: 1.3 }}>
+                      {ev.title}
+                    </p>
+                    <p className="text-[#9A8890] text-xs mt-0.5">{ev.date}</p>
+                    <p className="text-[#B59AAA] text-xs mt-0.5">{ev.location}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>
