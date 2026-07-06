@@ -146,24 +146,22 @@ export default function Home() {
           <Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {EVENTS.map((event) => (
-                <div key={event.id} className="bg-white border border-pink-100/80 overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-purple-100/50">
+                <div key={event.id} className="flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1.5">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full aspect-video object-cover"
+                    className="w-full h-[200px] object-cover rounded-[20px]"
                     onError={(e) => { e.target.style.display = "none"; }}
                   />
-                  <div className="p-6 flex flex-col flex-1">
+                  <div>
                     <h3
-                      className="serif font-semibold text-[#2D2226] leading-snug mb-2"
-                      style={{ fontSize: "20px" }}
+                      className="serif font-semibold text-[#2D2226] leading-snug"
+                      style={{ fontSize: "17px" }}
                     >
                       {event.title}
                     </h3>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs text-[#9A8890]">{event.date}</span>
-                    </div>
-                    <p className="text-[#7A6870] text-sm leading-relaxed flex-1 mb-4">
+                    <p className="text-[#9A8890] text-xs mt-0.5">{event.date}</p>
+                    <p className="text-[#7A6870] text-sm leading-relaxed mt-1.5">
                       {event.description}
                     </p>
                   </div>
