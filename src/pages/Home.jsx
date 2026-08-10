@@ -35,27 +35,27 @@ function Reveal({ children, delay = 0, className = "" }) {
 const EVENTS = [
   {
     id: 1,
-    title: "Summer Cookie Decorating",
-    date: "June 24, 2026",
+    title: "Bake Sale",
+    date: "August 1, 2026",
     description:
-      "Students and seniors made fun designs together at Brooklyn Homecrest Community Bensonhurst Center.",
-    image: "cookie.png"
+      "Our students baked goods and sold them at Corona Park, making over 250 dollars that will go towards funding our events!",
+    image: "bakesale.png"
   },
   {
     id: 2,
-    title: "Easter Egg Decorating",
-    date: "April 10, 2026",
+    title: "Tote Bag Making",
+    date: "July 31, 2026",
     description:
-      "Students and seniors made easter eggs together at Brooklyn Homecrest Community Bensonhurst Center.",
-    image: "easter.png"
+      "Students and seniors painted on tote bags at Forest Hills Community Center.",
+    image: "totebag2.png"
   },
   {
     id: 3,
-    title: "Origami Making",
-    date: "March 20, 2026",
+    title: "Tissue Paper Art",
+    date: "July 24, 2026",
     description:
-      "Students and seniors spent an afternoon making orgami crafts in Kew Gardens Older Adult Center.",
-    image: "origami.png"
+      "Using tissue paper and markers, seniors and students collaborated to make beautiful art at Forest Hills Community Center.",
+    image: "tissuepaper.png"
   }
 ];
 

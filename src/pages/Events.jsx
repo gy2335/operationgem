@@ -33,6 +33,41 @@ function Reveal({ children, delay = 0, className = "" }) {
 
 const PAST_EVENTS = [
   {
+    id: 12,
+    title: "Bake Sale",
+    date: "July 31, 2026",
+    location: "Corona Park",
+    image: "bakesale.png",
+  },
+  {
+    id: 11,
+    title: "Tote Bag Making",
+    date: "July 31, 2026",
+    location: "Forest Hills Community Center",
+    image: "totebag2.png",
+  },
+  {
+    id: 10,
+    title: "Tissue Paper Art",
+    date: "July 24, 2026",
+    location: "Forest Hills Community Center",
+    image: "tissuepaper.png",
+  },
+  {
+    id: 9,
+    title: "Origami Making",
+    date: "July 17, 2026",
+    location: "Forest Hills Community Center",
+    image: "origami2.png",
+  },
+  {
+    id: 8,
+    title: "Board Games",
+    date: "July 10, 2026",
+    location: "Forest Hills Community Center",
+    image: "boardgames.png",
+  },
+  {
     id: 7,
     title: "Bingo",
     date: "June 30, 2026",
@@ -86,37 +121,52 @@ const PAST_EVENTS = [
 const UPCOMING_EVENTS = [
   {
     id: 1,
-    title: "Board Games",
-    month: "JUL",
-    day: "10",
+    title: "Bingo (JICE X GEM)",
+    month: "AUG",
+    day: "11",
     location: "Forest Hills Community Center",
-    detail: "Uno, Poker, Scrabble, Monopoly & Headbands",
     color: "#B578F0",
   },
   {
     id: 2,
-    title: "Origami Making",
-    month: "JUL",
-    day: "17",
+    title: "Pencil Case Decor",
+    month: "AUG",
+    day: "18",
     location: "Forest Hills Community Center",
-    color: "#E8667A",
+    color: "#B578F0",
   },
   {
     id: 3,
     title: "Tissue Paper Art",
-    month: "JUL",
-    day: "24",
-    location: "Forest Hills Community Center",
-    color: "#EC6FAF",
+    month: "AUG",
+    day: "19",
+    location: "Brooklyn Homecrest Community Bensonhurst Center",
+    color: "#B578F0",
   },
   {
     id: 4,
-    title: "Tote Bag Making",
-    month: "JUL",
-    day: "31",
+    title: "Board Game Party",
+    month: "AUG",
+    day: "25",
     location: "Forest Hills Community Center",
-    color: "#7C6FE0",
+    color: "#B578F0",
   },
+  {
+    id: 5,
+    title: "Tote Bag Making",
+    month: "AUG",
+    day: "26",
+    location: "Brooklyn Homecrest Community Bensonhurst Center",
+    color: "#B578F0",
+  },
+  {
+    id: 6,
+    title: "Beading",
+    month: "SEP",
+    day: "2",
+    location: "Brooklyn Homecrest Community Bensonhurst Center",
+    color: "#B578F0",
+  }
 ];
 
 export default function Events() {
@@ -262,7 +312,7 @@ export default function Events() {
                       </h3>
                       <div className="flex flex-wrap gap-4 text-xs text-[#9A8890]">
                         {ev.time && <span>🕐 {ev.time}</span>}
-                        <span>📍 {ev.location}</span>
+                        <span>{ev.location}</span>
                       </div>
                       {ev.detail && (
                         <p className="text-xs text-[#B59AAA] mt-1.5">{ev.detail}</p>
